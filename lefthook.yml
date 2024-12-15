@@ -1,0 +1,11 @@
+pre-commit:
+  parallel: true
+  verbose: true
+  commands:
+    service-check:
+      root: 'gilmore-book-store/'
+      exclude:
+        - 'node_modules/**/*'
+        - 'cdk.out/**/*'
+      run: npx @biomejs/biome check --write --staged --no-errors-on-unmatched
+      stage_fixed: true
